@@ -61,9 +61,9 @@ syn match pandocBlockQuote /^>.*\n\(.*\n\@<!\n\)*/ skipnl
 syn region pandocCodeBlock   start=/\(\(\d\|\a\|*\).*\n\)\@<!\(^\(\s\{4,}\|\t\+\)\).*\n/ end=/.\(\n^\s*\n\)\@=/
 
 " Delimited Code Blocks:
-syn region pandocDelimitedCodeBlock start=/^\z(\~\{3,}\~*\)\( {.\+}\)*/ end=/\z1\~*/ skipnl contains=pandocDelimitedCodeBlockLanguage
-syn region pandocDelimitedCodeBlock start=/^\z(\`\{3,}\`*\)\( {.\+}\)*/ end=/\z1\`*/ skipnl contains=pandocDelimitedCodeBlockLanguage
-syn region pandocDelimitedCodeBlock start=/^\z(\~\{3,}\~*\)\( {.\+}\)*/ end=/\z1\~*/ skipnl contains=pandocDelimitedCodeBlockLanguage
+syn region pandocDelimitedCodeBlock start=/^\s*\z(\~\{3,}\~*\)\( {.\+}\)*/ end=/\z1\~*/ skipnl contains=pandocDelimitedCodeBlockLanguage
+syn region pandocDelimitedCodeBlock start=/^\s*\z(\`\{3,}\`*\)\( {.\+}\)*/ end=/\z1\`*/ skipnl contains=pandocDelimitedCodeBlockLanguage
+syn region pandocDelimitedCodeBlock start=/^\s*\z(\~\{3,}\~*\)\( {.\+}\)*/ end=/\z1\~*/ skipnl contains=pandocDelimitedCodeBlockLanguage
 syn match pandocDelimitedCodeBlockLanguage /{.\+}/ contained containedin=pandocDelimitedCodeBlock
 syn match pandocCodePre /<pre>.\{-}<\/pre>/ skipnl
 syn match pandocCodePre /<code>.\{-}<\/code>/ skipnl
