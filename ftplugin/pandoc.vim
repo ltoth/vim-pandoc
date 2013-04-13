@@ -23,6 +23,7 @@ if exists("g:pandoc_use_hard_wraps") && g:pandoc_use_hard_wraps
 	" pandoc syntax.
 	" TODO: add support for roman numerals
 	setlocal formatlistpat=^\\s*\\([*+-]\\\|\\((*\\d\\+[.)]\\+\\)\\\|\\((*\\l[.)]\\+\\)\\)\\s\\+
+  setlocal indentexpr=indent(prevnonblank(v:lnum-1))
 	
 	if exists("g:pandoc_auto_format") && g:pandoc_auto_format
 		" a: auto-format
