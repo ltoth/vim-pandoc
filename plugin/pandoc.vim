@@ -28,6 +28,8 @@ command! -nargs=? PandocRegisterExecutor exec 'py pandoc_register_executor("<arg
 PandocRegisterExecutor PandocHtml <LocalLeader>html html pandoc -t html -Ss --old-dashes -o %:r.html %%
 " Generate rst
 PandocRegisterExecutor PandocRst <LocalLeader>rst rst pandoc -t rst -Ss --old-dashes -o %:r.rst %%
+" Generate wiki rst for MoinMoin
+PandocRegisterExecutor PandocWiki <LocalLeader>w rst pandoc -t rst --template=wiki -Ss --old-dashes --toc -o %:r.rst %%
 " Generate pdf w/ citeproc and open in default pdf viewer
 PandocRegisterExecutor PandocPdf <LocalLeader>pdf pdf pandoc --old-dashes --latex-engine xelatex PANDOC#P_BIBS -o %:r.pdf %%
 " Generate odt w/ citeproc and open in default odt viewer
