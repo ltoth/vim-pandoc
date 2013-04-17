@@ -25,11 +25,11 @@ command! -nargs=? PandocRegisterExecutor exec 'py pandoc_register_executor("<arg
 " commands in his .vimrc.
 "
 " Generate html and open in default html viewer
-PandocRegisterExecutor PandocHtml <LocalLeader>html html pandoc -t html -Ss -o %:r.html %%
+PandocRegisterExecutor PandocHtml <LocalLeader>html html pandoc -t html -Ss --old-dashes -o %:r.html %%
 " Generate rst
-PandocRegisterExecutor PandocRst <LocalLeader>rst rst pandoc -t rst -Ss -o %:r.rst %%
+PandocRegisterExecutor PandocRst <LocalLeader>rst rst pandoc -t rst -Ss --old-dashes -o %:r.rst %%
 " Generate pdf w/ citeproc and open in default pdf viewer
-PandocRegisterExecutor PandocPdf <LocalLeader>pdf pdf pandoc --latex-engine xelatex PANDOC#P_BIBS -o %:r.pdf %%
+PandocRegisterExecutor PandocPdf <LocalLeader>pdf pdf pandoc --old-dashes --latex-engine xelatex PANDOC#P_BIBS -o %:r.pdf %%
 " Generate odt w/ citeproc and open in default odt viewer
-PandocRegisterExecutor PandocOdt <LocalLeader>odt odt pandoc -t odt PANDOC#P_BIBS -o %:r.odt %%
+PandocRegisterExecutor PandocOdt <LocalLeader>odt odt pandoc -t odt --old-dashes PANDOC#P_BIBS -o %:r.odt %%
 endif
